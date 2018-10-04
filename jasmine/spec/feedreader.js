@@ -43,6 +43,13 @@ $(function() {
          * and that the name is not empty.
          */
 
+        it('feeds have a name and not empty', function() {
+          allFeeds.forEach(feed => {
+            expect(feed.name).toBeDefined();
+            expect(feed.name.length).not.toBe(0);
+          })
+        });
+
     });
 
 
