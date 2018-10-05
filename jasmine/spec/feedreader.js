@@ -118,3 +118,5 @@ $(function() {
              });
          });
 }());
+
+// A big thanks to Lloan for the walkthrough. I followed his webinar.
