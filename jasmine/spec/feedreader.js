@@ -104,4 +104,17 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+         describe('New Feed Selection', function() {
+          let feeds = [];
+             beforeEach(done => {
+                 loadFeed(0,function(){
+                    feeds.push($('.feed').html());
+                    loadFeed(1, done);
+             });
+            });
+             it('content changes when the new feed is loaded', () => {
+                feeds.push($('.feed').html());
+                 expect(feeds[0]).not.toEqual(feeds[1]);
+             });
+         });
 }());
